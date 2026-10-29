@@ -2,25 +2,27 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>ＰＨＰ基礎</title>
+        <title>下記の内容で登録しました。</title>
     </head>
     <body>
         <?php
-            $nickname=$_POST['nickname'];
+            $kaiinmei=$_POST['kaiinmei'];
+            $ps=$_POST['ps'];
             $email=$_POST['email'];
-            $goiken=$_POST['goiken'];
-            $nickname= htmlspecialchars($nickname);
+            $juusho=$_POST['juusho'];
+            $kaiinmei= htmlspecialchars($kaiinmei);
+            $ps= htmlspecialchars($ps);
             $email= htmlspecialchars($email);
-            $goiken= htmlspecialchars($goiken);
-
-            print $nickname;
-            print '様<br>';
-            print 'ご意見ありがとうございました<br>';
-            print '頂いたご意見『';
-            print $goiken;
+            $juusho= htmlspecialchars($juusho);
+            
+            print $kaiinmei;
+            print ']<br>';
+            print $ps;
             print ']<br>';
             print $email;
-            print 'にメールを送りましたのでご確認ください。';
+            print ']<br>';
+            print $juusho;
+            print ']<br>';
         ?>
     </body>
 </html>

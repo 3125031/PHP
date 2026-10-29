@@ -2,24 +2,32 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>ＰＨＰ基礎</title>
+    <title>会員登録</title>
 </head>
 <body>
 <?php
-    $nickname=$_POST['nickname'];
+    $kaiinmei=$_POST['kaiinmei'];
+    $ps=$_POST['ps'];
     $email=$_POST['email'];
-    $goiken=$_POST['goiken'];
+    $juusho=$_POST['juusho'];
     
-    $nickname= htmlspecialchars($nickname);
+    $kaiinmei= htmlspecialchars($kaiinmei);
     $email= htmlspecialchars($email);
-    $goiken= htmlspecialchars($goiken);
+    $juusho= htmlspecialchars($juusho);
 
-    if($nickname=='') {
-        print 'ニックネームが入力されていません。<br>';
+    if($kaiinmei=='') {
+        print '会員名が入力されていません。<br>';
     } else {
         print 'ようこそ';
-        print $nickname;
+        print $kaiinmei;
         print '様'; print '<br>';
+    }
+    if($ps=='') {
+        print 'パスワードが入力されていません。<br>';
+    } else {
+         print 'パスワード:';
+        print $ps;
+        print  '<br>';
     }
     if($email=='') {
         print 'メールアドレスが入力されていません。<br>';
@@ -28,22 +36,25 @@
         print $email;
         print '<br>';
     }
-    if($goiken=='') {
-        print 'ご意見が入力されていません。<br>';
+    
+    if($juusho=='') {
+        print '住所が入力されていません。<br>';
     } else {
-        print 'ご意見[';
-        print $goiken;
-        print '] <br>';
+        print '住所:';
+        print $juusho;
+        print '<br>';
     }
-    if($nickname==''||$email==''||$goiken=='') {
+  
+    if($kaiinmei==''||$ps==''||$email==''||$juusho=='') {
         print'<form>';
         print'<input type="button" onclick="history.back()" value="戻る">';
         print'</form>';
     } else {
-        print'<form method="post" action="thanks.php">';
-        print'<input name="nickname" type="hidden" value="'.$nickname.'">';
-        print'<input name="email" type="hidden" value="'.$email.'">';
-        print'<input name="goiken" type="hidden" value="'.$goiken.'">';
+        print'<form method="post" action="member_add_done.php">';
+        print'<input name="nickname" type="hidden" value="'.$kaiinmei.'">';
+        print'<input name="ps" type="hidden" value="'.$email.'">';
+        print'<input name="ps" type="hidden" value="'.$ps.'">';
+        print'<input name="juusho" type="hidden" value="'.$juusho.'">';
         print'<input type="button" onclick="history.back()" value="戻る">';
         print'<input type="submit" value="OK">';
         print'</form>';
